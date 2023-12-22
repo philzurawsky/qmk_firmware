@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 {   KC_TAB,    KC_Q,      KC_W,      KC_E,    KC_R,    KC_T,    KC_Y,     KC_U,    KC_I,    KC_O,      KC_P,      KC_LBRC,   KC_RBRC,   KC_BSLS,   KC_NO,     KC_P7,     KC_P8,     KC_P9,     KC_PPLS },
                 {   QK_LEAD,   KC_A,      KC_S,      KC_D,    KC_F,    KC_G,    KC_H,     KC_J,    KC_K,    KC_L,      KC_SCLN,   KC_QUOT,   KC_NO,     KC_ENT,    KC_NO,     KC_P4,     KC_P5,     KC_P6,     KC_NO   },
                 {   KC_LSFT,   KC_NO,     KC_Z,      KC_X,    KC_C,    KC_V,    KC_B,     KC_N,    KC_M,    KC_COMM,   KC_DOT,    KC_SLSH,   KC_NO,     KC_RSFT,   KC_UP,     KC_P1,     KC_P2,     KC_P3,     KC_PENT },
-                {   KC_LCTL,   KC_LGUI,   KC_LALT,   KC_NO,   KC_NO,   KC_NO,   KC_SPC,   KC_NO,   KC_NO,   KC_NO,     KC_RALT,   MO(_CLI),   KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_P0,     KC_PDOT,   KC_NO   }
+                {   KC_LCTL,   KC_LGUI,   KC_LALT,   KC_NO,   KC_NO,   KC_NO,   LT(_FL, KC_SPC),   KC_NO,   KC_NO,   KC_NO,     KC_RALT,   MO(_CLI),   KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_P0,     KC_PDOT,   KC_NO   }
               },
 
 /*				+--------------------------------------------------------------------------+-------------------+
@@ -162,88 +162,681 @@ void leader_end_user(void) {
   // if (leader_sequence_one_key(...)) {
   //   ...
   // }
-
-  if (leader_sequence_two_keys(KC_A, KC_D)) {
-    SEND_STRING(CL_AD);
-  }
-
-  else if (leader_sequence_two_keys(KC_A, KC_L)) {
-    SEND_STRING(CL_AL);
-  }
-  else if (leader_sequence_two_keys(KC_A, KC_M)) {
+if (leader_sequence_two_keys(KC_A, KC_M)) {
     SEND_STRING(CL_AM);
-  }
-  else if (leader_sequence_two_keys(KC_A, KC_O)) {
+}
+else if (leader_sequence_two_keys(KC_A, KC_O)) {
     SEND_STRING(CL_AO);
-  }
-
-  else if (leader_sequence_two_keys(KC_A, KC_Q)) {
+}
+else if (leader_sequence_two_keys(KC_A, KC_Q)) {
     SEND_STRING(CL_AQ);
-  }
-
-  else if (leader_sequence_two_keys(KC_A, KC_R)) {
+}
+else if (leader_sequence_two_keys(KC_A, KC_R)) {
     SEND_STRING(CL_AR);
-  }
-
-  else if (leader_sequence_two_keys(KC_A, KC_N)) {
-    SEND_STRING(CL_AN);
-  }
-
-  else if (leader_sequence_two_keys(KC_A, KC_F)) {
-    SEND_STRING(CL_AF);
-  }
-
-  else if (leader_sequence_three_keys(KC_A, KC_N, KC_A)) {
+}
+else if (leader_sequence_three_keys(KC_A, KC_N, KC_A)) {
     SEND_STRING(CL_ANA);
-  }
-
-  else if (leader_sequence_three_keys(KC_A, KC_R, KC_R)) {
+}
+else if (leader_sequence_two_keys(KC_A, KC_N)) {
+    SEND_STRING(CL_AN);
+}
+else if (leader_sequence_three_keys(KC_A, KC_R, KC_R)) {
     SEND_STRING(CL_ARR);
-  }
-
-  else if (leader_sequence_three_keys(KC_A, KC_S, KC_Y)) {
+}
+else if (leader_sequence_three_keys(KC_A, KC_S, KC_Y)) {
     SEND_STRING(CL_ASY);
-  }
-  
-  else if (leader_sequence_three_keys(KC_A, KC_C, KC_P)) {
+}
+else if (leader_sequence_two_keys(KC_A, KC_F)) {
+    SEND_STRING(CL_AF);
+}
+else if (leader_sequence_three_keys(KC_A, KC_C, KC_P)) {
     SEND_STRING(CL_ACP);
-  }
-
-
-  else if (leader_sequence_one_key(KC_B)) {
-    SEND_STRING(CL_B);
-  }
-
-  else if (leader_sequence_two_keys(KC_B, KC_C)) {
+}
+else if (leader_sequence_two_keys(KC_B, KC_C)) {
     SEND_STRING(CL_BC);
-  }
-
-  else if (leader_sequence_two_keys(KC_B, KC_A)) {
+}
+else if (leader_sequence_two_keys(KC_B, KC_A)) {
     SEND_STRING(CL_BA);
-  }
-
-  else if (leader_sequence_two_keys(KC_B, KC_I)) {
-    SEND_STRING(CL_BI);
-  }
-
-  else if (leader_sequence_two_keys(KC_B, KC_R)) {
-    SEND_STRING(CL_BR);
-  }
-
-  else if (leader_sequence_three_keys(KC_B, KC_R, KC_A)) {
+}
+else if (leader_sequence_one_key(KC_B)) {
+    SEND_STRING(CL_B);
+}
+else if (leader_sequence_three_keys(KC_B, KC_R, KC_A)) {
     SEND_STRING(CL_BRA);
-  } 
+}
+else if (leader_sequence_two_keys(KC_B, KC_R)) {
+    SEND_STRING(CL_BR);
+}
+else if (leader_sequence_three_keys(KC_C, KC_A, KC_P)) {
+    SEND_STRING(CL_CAP);
+}
+else if (leader_sequence_three_keys(KC_C, KC_A, KC_R)) {
+    SEND_STRING(CL_CAR);
+}
+else if (leader_sequence_two_keys(KC_C, KC_E)) {
+    SEND_STRING(CL_CE);
+}
+else if (leader_sequence_two_keys(KC_C, KC_U)) {
+    SEND_STRING(CL_CU);
+}
+else if (leader_sequence_three_keys(KC_C, KC_H, KC_T)) {
+    SEND_STRING(CL_CHT);
+}
+else if (leader_sequence_three_keys(KC_C, KC_H, KC_D)) {
+    SEND_STRING(CL_CHD);
+}
+else if (leader_sequence_three_keys(KC_C, KC_H, KC_P)) {
+    SEND_STRING(CL_CHP);
+}
+else if (leader_sequence_four_keys(KC_C, KC_H, KC_O, KC_L)) {
+    SEND_STRING(CL_CHOL);
+}
+else if (leader_sequence_three_keys(KC_C, KC_H, KC_R)) {
+    SEND_STRING(CL_CHR);
+}
+else if (leader_sequence_four_keys(KC_C, KC_H, KC_R, KC_C)) {
+    SEND_STRING(CL_CHRC);
+}
+else if (leader_sequence_four_keys(KC_C, KC_H, KC_R, KC_D)) {
+    SEND_STRING(CL_CHRD);
+}
+else if (leader_sequence_two_keys(KC_C, KC_D)) {
+    SEND_STRING(CL_CD);
+}
+else if (leader_sequence_three_keys(KC_C, KC_O, KC_D)) {
+    SEND_STRING(CL_COD);
+}
+else if (leader_sequence_two_keys(KC_C, KC_F)) {
+    SEND_STRING(CL_CF);
+}
+else if (leader_sequence_three_keys(KC_C, KC_C, KC_F)) {
+    SEND_STRING(CL_CCF);
+}
+else if (leader_sequence_three_keys(KC_C, KC_O, KC_N)) {
+    SEND_STRING(CL_CON);
+}
+else if (leader_sequence_four_keys(KC_C, KC_O, KC_N, KC_S)) {
+    SEND_STRING(CL_CONS);
+}
+else if (leader_sequence_three_keys(KC_D, KC_E, KC_F)) {
+    SEND_STRING(CL_DEF);
+}
+else if (leader_sequence_three_keys(KC_D, KC_E, KC_M)) {
+    SEND_STRING(CL_DEM);
+}
+else if (leader_sequence_two_keys(KC_D, KC_B)) {
+    SEND_STRING(CL_DB);
+}
+else if (leader_sequence_four_keys(KC_D, KC_I, KC_A, KC_L)) {
+    SEND_STRING(CL_DIAL);
+}
+else if (leader_sequence_one_key(KC_D)) {
+    SEND_STRING(CL_D);
+}
+else if (leader_sequence_two_keys(KC_D, KC_V)) {
+    SEND_STRING(CL_DV);
+}
+else if (leader_sequence_three_keys(KC_D, KC_I, KC_S)) {
+    SEND_STRING(CL_DIS);
+}
+else if (leader_sequence_three_keys(KC_D, KC_Y, KC_L)) {
+    SEND_STRING(CL_DYL);
+}
+else if (leader_sequence_three_keys(KC_D, KC_Y, KC_M)) {
+    SEND_STRING(CL_DYM);
+}
+else if (leader_sequence_three_keys(KC_D, KC_Y, KC_P)) {
+    SEND_STRING(CL_DYP);
+}
+else if (leader_sequence_three_keys(KC_D, KC_Y, KC_S)) {
+    SEND_STRING(CL_DYS);
+}
+else if (leader_sequence_two_keys(KC_D, KC_F)) {
+    SEND_STRING(CL_DF);
+}
+else if (leader_sequence_one_key(KC_E)) {
+    SEND_STRING(CL_E);
+}
+else if (leader_sequence_two_keys(KC_E, KC_C)) {
+    SEND_STRING(CL_EC);
+}
+else if (leader_sequence_three_keys(KC_E, KC_N, KC_L)) {
+    SEND_STRING(CL_ENL);
+}
+else if (leader_sequence_two_keys(KC_E, KC_D)) {
+    SEND_STRING(CL_ED);
+}
+else if (leader_sequence_two_keys(KC_E, KC_P)) {
+    SEND_STRING(CL_EP);
+}
+else if (leader_sequence_four_keys(KC_E, KC_P, KC_I, KC_L)) {
+    SEND_STRING(CL_EPIL);
+}
+else if (leader_sequence_three_keys(KC_F, KC_T, KC_T)) {
+    SEND_STRING(CL_FTT);
+}
+else if (leader_sequence_three_keys(KC_F, KC_H, KC_D)) {
+    SEND_STRING(CL_FHD);
+}
+else if (leader_sequence_three_keys(KC_F, KC_A, KC_T)) {
+    SEND_STRING(CL_FAT);
+}
+else if (leader_sequence_two_keys(KC_F, KC_D)) {
+    SEND_STRING(CL_FD);
+}
+else if (leader_sequence_three_keys(KC_F, KC_E, KC_B)) {
+    SEND_STRING(CL_FEB);
+}
+else if (leader_sequence_four_keys(KC_F, KC_E, KC_R, KC_T)) {
+    SEND_STRING(CL_FERT);
+}
+else if (leader_sequence_two_keys(KC_F, KC_U)) {
+    SEND_STRING(CL_FU);
+}
+else if (leader_sequence_two_keys(KC_F, KC_I)) {
+    SEND_STRING(CL_FI);
+}
+else if (leader_sequence_two_keys(KC_F, KC_R)) {
+    SEND_STRING(CL_FR);
+}
+else if (leader_sequence_three_keys(KC_F, KC_A, KC_U)) {
+    SEND_STRING(CL_FAU);
+}
+else if (leader_sequence_two_keys(KC_G, KC_E)) {
+    SEND_STRING(CL_GE);
+}
+else if (leader_sequence_three_keys(KC_G, KC_C, KC_U)) {
+    SEND_STRING(CL_GCU);
+}
+else if (leader_sequence_three_keys(KC_G, KC_D, KC_M)) {
+    SEND_STRING(CL_GDM);
+}
+else if (leader_sequence_two_keys(KC_G, KC_O)) {
+    SEND_STRING(CL_GO);
+}
+else if (leader_sequence_two_keys(KC_G, KC_D)) {
+    SEND_STRING(CL_GD);
+}
+else if (leader_sequence_four_keys(KC_H, KC_A, KC_E, KC_M)) {
+    SEND_STRING(CL_HAEM);
+}
+else if (leader_sequence_three_keys(KC_H, KC_A, KC_E)) {
+    SEND_STRING(CL_HAE);
+}
+else if (leader_sequence_two_keys(KC_H, KC_A)) {
+    SEND_STRING(CL_HA);
+}
+else if (leader_sequence_four_keys(KC_H, KC_E, KC_C, KC_H)) {
+    SEND_STRING(CL_HECH);
+}
+else if (leader_sequence_three_keys(KC_H, KC_P, KC_Y)) {
+    SEND_STRING(CL_HPY);
+}
+else if (leader_sequence_one_key(KC_H)) {
+    SEND_STRING(CL_H);
+}
+else if (leader_sequence_two_keys(KC_H, KC_C)) {
+    SEND_STRING(CL_HC);
+}
+else if (leader_sequence_four_keys(KC_H, KC_Y, KC_P, KC_C)) {
+    SEND_STRING(CL_HYPC);
+}
+else if (leader_sequence_three_keys(KC_H, KC_Y, KC_G)) {
+    SEND_STRING(CL_HYG);
+}
+else if (leader_sequence_three_keys(KC_H, KC_Y, KC_K)) {
+    SEND_STRING(CL_HYK);
+}
+else if (leader_sequence_four_keys(KC_H, KC_Y, KC_P, KC_L)) {
+    SEND_STRING(CL_HYPL);
+}
+else if (leader_sequence_three_keys(KC_H, KC_Y, KC_N)) {
+    SEND_STRING(CL_HYN);
+}
+else if (leader_sequence_three_keys(KC_H, KC_Y, KC_P)) {
+    SEND_STRING(CL_HYP);
+}
+else if (leader_sequence_two_keys(KC_H, KC_T)) {
+    SEND_STRING(CL_HT);
+}
+else if (leader_sequence_three_keys(KC_H, KC_T, KC_H)) {
+    SEND_STRING(CL_HTH);
+}
+else if (leader_sequence_three_keys(KC_H, KC_Y, KC_T)) {
+    SEND_STRING(CL_HYT);
+}
+else if (leader_sequence_three_keys(KC_H, KC_O, KC_K)) {
+    SEND_STRING(CL_HOK);
+}
+else if (leader_sequence_three_keys(KC_H, KC_O, KC_L)) {
+    SEND_STRING(CL_HOL);
+}
+else if (leader_sequence_three_keys(KC_H, KC_O, KC_N)) {
+    SEND_STRING(CL_HON);
+}
+else if (leader_sequence_three_keys(KC_H, KC_O, KC_P)) {
+    SEND_STRING(CL_HOP);
+}
+else if (leader_sequence_three_keys(KC_H, KC_O, KC_T)) {
+    SEND_STRING(CL_HOT);
+}
+else if (leader_sequence_two_keys(KC_H, KC_Y)) {
+    SEND_STRING(CL_HY);
+}
+else if (leader_sequence_one_key(KC_I)) {
+    SEND_STRING(CL_I);
+}
+else if (leader_sequence_three_keys(KC_I, KC_C, KC_F)) {
+    SEND_STRING(CL_ICF);
+}
+else if (leader_sequence_three_keys(KC_I, KC_N, KC_C)) {
+    SEND_STRING(CL_INC);
+}
+else if (leader_sequence_four_keys(KC_I, KC_N, KC_F, KC_E)) {
+    SEND_STRING(CL_INFE);
+}
+else if (leader_sequence_three_keys(KC_I, KC_N, KC_F)) {
+    SEND_STRING(CL_INF);
+}
+else if (leader_sequence_five_keys(KC_I, KC_N, KC_F, KC_E, KC_R)) {
+    SEND_STRING(CL_INFER);
+}
+else if (leader_sequence_four_keys(KC_I, KC_N, KC_F, KC_L)) {
+    SEND_STRING(CL_INFL);
+}
+else if (leader_sequence_three_keys(KC_I, KC_B, KC_D)) {
+    SEND_STRING(CL_IBD);
+}
+else if (leader_sequence_three_keys(KC_I, KC_D, KC_A)) {
+    SEND_STRING(CL_IDA);
+}
+else if (leader_sequence_three_keys(KC_I, KC_R, KC_P)) {
+    SEND_STRING(CL_IRP);
+}
+else if (leader_sequence_four_keys(KC_I, KC_R, KC_P, KC_B)) {
+    SEND_STRING(CL_IRPB);
+}
+else if (leader_sequence_three_keys(KC_I, KC_H, KC_D)) {
+    SEND_STRING(CL_IHD);
+}
+else if (leader_sequence_one_key(KC_J)) {
+    SEND_STRING(CL_J);
+}
+else if (leader_sequence_two_keys(KC_J, KC_P)) {
+    SEND_STRING(CL_JP);
+}
+else if (leader_sequence_two_keys(KC_L, KC_E)) {
+    SEND_STRING(CL_LE);
+}
+else if (leader_sequence_one_key(KC_L)) {
+    SEND_STRING(CL_L);
+}
+else if (leader_sequence_three_keys(KC_L, KC_A, KC_P)) {
+    SEND_STRING(CL_LAP);
+}
+else if (leader_sequence_two_keys(KC_M, KC_C)) {
+    SEND_STRING(CL_MC);
+}
+else if (leader_sequence_three_keys(KC_M, KC_C, KC_A)) {
+    SEND_STRING(CL_MCA);
+}
+else if (leader_sequence_one_key(KC_M)) {
+    SEND_STRING(CL_M);
+}
+else if (leader_sequence_two_keys(KC_M, KC_P)) {
+    SEND_STRING(CL_MP);
+}
+else if (leader_sequence_four_keys(KC_M, KC_E, KC_N, KC_P)) {
+    SEND_STRING(CL_MENP);
+}
+else if (leader_sequence_three_keys(KC_M, KC_E, KC_N)) {
+    SEND_STRING(CL_MEN);
+}
+else if (leader_sequence_three_keys(KC_M, KC_T, KC_X)) {
+    SEND_STRING(CL_MTX);
+}
+else if (leader_sequence_three_keys(KC_M, KC_I, KC_C)) {
+    SEND_STRING(CL_MIC);
+}
+else if (leader_sequence_three_keys(KC_M, KC_I, KC_A)) {
+    SEND_STRING(CL_MIA);
+}
+else if (leader_sequence_two_keys(KC_M, KC_H)) {
+    SEND_STRING(CL_MH);
+}
+else if (leader_sequence_four_keys(KC_M, KC_O, KC_N, KC_G)) {
+    SEND_STRING(CL_MONG);
+}
+else if (leader_sequence_two_keys(KC_M, KC_Y)) {
+    SEND_STRING(CL_MY);
+}
+else if (leader_sequence_two_keys(KC_N, KC_V)) {
+    SEND_STRING(CL_NV);
+}
+else if (leader_sequence_three_keys(KC_O, KC_C, KC_H)) {
+    SEND_STRING(CL_OCH);
+}
+else if (leader_sequence_two_keys(KC_O, KC_D)) {
+    SEND_STRING(CL_OD);
+}
+else if (leader_sequence_two_keys(KC_O, KC_H)) {
+    SEND_STRING(CL_OH);
+}
+else if (leader_sequence_two_keys(KC_O, KC_L)) {
+    SEND_STRING(CL_OL);
+}
+else if (leader_sequence_two_keys(KC_O, KC_M)) {
+    SEND_STRING(CL_OM);
+}
+else if (leader_sequence_two_keys(KC_O, KC_O)) {
+    SEND_STRING(CL_OO);
+}
+else if (leader_sequence_two_keys(KC_O, KC_R)) {
+    SEND_STRING(CL_OR);
+}
+else if (leader_sequence_two_keys(KC_O, KC_S)) {
+    SEND_STRING(CL_OS);
+}
+else if (leader_sequence_two_keys(KC_O, KC_T)) {
+    SEND_STRING(CL_OT);
+}
+else if (leader_sequence_two_keys(KC_O, KC_W)) {
+    SEND_STRING(CL_OW);
+}
+else if (leader_sequence_three_keys(KC_O, KC_N, KC_Y)) {
+    SEND_STRING(CL_ONY);
+}
+else if (leader_sequence_three_keys(KC_O, KC_S, KC_A)) {
+    SEND_STRING(CL_OSA);
+}
+else if (leader_sequence_three_keys(KC_O, KC_S, KC_T)) {
+    SEND_STRING(CL_OST);
+}
+else if (leader_sequence_three_keys(KC_O, KC_T, KC_E)) {
+    SEND_STRING(CL_OTE);
+}
+else if (leader_sequence_three_keys(KC_P, KC_A, KC_L)) {
+    SEND_STRING(CL_PAL);
+}
+else if (leader_sequence_three_keys(KC_P, KC_A, KC_N)) {
+    SEND_STRING(CL_PAN);
+}
+else if (leader_sequence_two_keys(KC_P, KC_P)) {
+    SEND_STRING(CL_PP);
+}
+else if (leader_sequence_four_keys(KC_P, KC_E, KC_R, KC_I)) {
+    SEND_STRING(CL_PERI);
+}
+else if (leader_sequence_two_keys(KC_P, KC_C)) {
+    SEND_STRING(CL_PC);
+}
+else if (leader_sequence_four_keys(KC_P, KC_E, KC_R, KC_D)) {
+    SEND_STRING(CL_PERD);
+}
+else if (leader_sequence_three_keys(KC_P, KC_I, KC_T)) {
+    SEND_STRING(CL_PIT);
+}
+else if (leader_sequence_three_keys(KC_P, KC_N, KC_E)) {
+    SEND_STRING(CL_PNE);
+}
+else if (leader_sequence_two_keys(KC_P, KC_G)) {
+    SEND_STRING(CL_PG);
+}
+else if (leader_sequence_four_keys(KC_P, KC_O, KC_L, KC_A)) {
+    SEND_STRING(CL_POLA);
+}
+else if (leader_sequence_three_keys(KC_P, KC_O, KC_M)) {
+    SEND_STRING(CL_POM);
+}
+else if (leader_sequence_two_keys(KC_P, KC_U)) {
+    SEND_STRING(CL_PU);
+}
+else if (leader_sequence_three_keys(KC_I, KC_M, KC_B)) {
+    SEND_STRING(CL_IMB);
+}
+else if (leader_sequence_two_keys(KC_P, KC_M)) {
+    SEND_STRING(CL_PM);
+}
+else if (leader_sequence_three_keys(KC_P, KC_O, KC_N)) {
+    SEND_STRING(CL_PON);
+}
+else if (leader_sequence_two_keys(KC_P, KC_V)) {
+    SEND_STRING(CL_PV);
+}
+else if (leader_sequence_four_keys(KC_P, KC_V, KC_E, KC_N)) {
+    SEND_STRING(CL_PVEN);
+}
+else if (leader_sequence_two_keys(KC_P, KC_H)) {
+    SEND_STRING(CL_PH);
+}
+else if (leader_sequence_three_keys(KC_P, KC_R, KC_B)) {
+    SEND_STRING(CL_PRB);
+}
+else if (leader_sequence_two_keys(KC_P, KC_S)) {
+    SEND_STRING(CL_PS);
+}
+else if (leader_sequence_three_keys(KC_P, KC_I, KC_N)) {
+    SEND_STRING(CL_PIN);
+}
+else if (leader_sequence_four_keys(KC_P, KC_R, KC_O, KC_C)) {
+    SEND_STRING(CL_PROC);
+}
+else if (leader_sequence_four_keys(KC_P, KC_R, KC_O, KC_S)) {
+    SEND_STRING(CL_PROS);
+}
+else if (leader_sequence_four_keys(KC_P, KC_S, KC_A, KC_R)) {
+    SEND_STRING(CL_PSAR);
+}
+else if (leader_sequence_two_keys(KC_P, KC_E)) {
+    SEND_STRING(CL_PE);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_A)) {
+    SEND_STRING(CL_QA);
+}
+else if (leader_sequence_four_keys(KC_Q, KC_C, KC_A, KC_P)) {
+    SEND_STRING(CL_QCAP);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_C)) {
+    SEND_STRING(CL_QC);
+}
+else if (leader_sequence_four_keys(KC_Q, KC_C, KC_O, KC_D)) {
+    SEND_STRING(CL_QCOD);
+}
+else if (leader_sequence_three_keys(KC_Q, KC_D, KC_B)) {
+    SEND_STRING(CL_QDB);
+}
+else if (leader_sequence_three_keys(KC_Q, KC_E, KC_P)) {
+    SEND_STRING(CL_QEP);
+}
+else if (leader_sequence_three_keys(KC_Q, KC_F, KC_I)) {
+    SEND_STRING(CL_QFI);
+}
+else if (leader_sequence_four_keys(KC_Q, KC_G, KC_D, KC_M)) {
+    SEND_STRING(CL_QGDM);
+}
+else if (leader_sequence_three_keys(KC_Q, KC_G, KC_O)) {
+    SEND_STRING(CL_QGO);
+}
+else if (leader_sequence_four_keys(KC_Q, KC_I, KC_N, KC_F)) {
+    SEND_STRING(CL_QINF);
+}
+else if (leader_sequence_three_keys(KC_Q, KC_M, KC_P)) {
+    SEND_STRING(CL_QMP);
+}
+else if (leader_sequence_five_keys(KC_Q, KC_M, KC_E, KC_N, KC_O)) {
+    SEND_STRING(CL_QMENO);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_M)) {
+    SEND_STRING(CL_QM);
+}
+else if (leader_sequence_four_keys(KC_Q, KC_O, KC_N, KC_Y)) {
+    SEND_STRING(CL_QONY);
+}
+else if (leader_sequence_five_keys(KC_Q, KC_P, KC_E, KC_R, KC_I)) {
+    SEND_STRING(CL_QPERI);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_P)) {
+    SEND_STRING(CL_QP);
+}
+else if (leader_sequence_five_keys(KC_Q, KC_P, KC_R, KC_O, KC_G)) {
+    SEND_STRING(CL_QPROG);
+}
+else if (leader_sequence_five_keys(KC_Q, KC_P, KC_R, KC_O, KC_S)) {
+    SEND_STRING(CL_QPROS);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_T)) {
+    SEND_STRING(CL_QT);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_U)) {
+    SEND_STRING(CL_QU);
+}
+else if (leader_sequence_three_keys(KC_R, KC_E, KC_C)) {
+    SEND_STRING(CL_REC);
+}
+else if (leader_sequence_two_keys(KC_R, KC_T)) {
+    SEND_STRING(CL_RT);
+}
+else if (leader_sequence_two_keys(KC_R, KC_C)) {
+    SEND_STRING(CL_RC);
+}
+else if (leader_sequence_two_keys(KC_R, KC_F)) {
+    SEND_STRING(CL_RF);
+}
+else if (leader_sequence_two_keys(KC_R, KC_I)) {
+    SEND_STRING(CL_RI);
+}
+else if (leader_sequence_three_keys(KC_R, KC_T, KC_R)) {
+    SEND_STRING(CL_RTR);
+}
+else if (leader_sequence_two_keys(KC_R, KC_H)) {
+    SEND_STRING(CL_RH);
+}
+else if (leader_sequence_two_keys(KC_R, KC_A)) {
+    SEND_STRING(CL_RA);
+}
+else if (leader_sequence_one_key(KC_R)) {
+    SEND_STRING(CL_R);
+}
+else if (leader_sequence_three_keys(KC_S, KC_C, KC_N)) {
+    SEND_STRING(CL_SCN);
+}
+else if (leader_sequence_four_keys(KC_S, KC_C, KC_R, KC_G)) {
+    SEND_STRING(CL_SCRG);
+}
+else if (leader_sequence_three_keys(KC_S, KC_I, KC_N)) {
+    SEND_STRING(CL_SIN);
+}
+else if (leader_sequence_three_keys(KC_S, KC_O, KC_B)) {
+    SEND_STRING(CL_SOB);
+}
+else if (leader_sequence_two_keys(KC_S, KC_C)) {
+    SEND_STRING(CL_SC);
+}
+else if (leader_sequence_two_keys(KC_S, KC_V)) {
+    SEND_STRING(CL_SV);
+}
+else if (leader_sequence_five_keys(KC_S, KC_C, KC_C, KC_L, KC_B)) {
+    SEND_STRING(CL_SCCLB);
+}
+else if (leader_sequence_two_keys(KC_S, KC_T)) {
+    SEND_STRING(CL_ST);
+}
+else if (leader_sequence_four_keys(KC_S, KC_T, KC_D, KC_C)) {
+    SEND_STRING(CL_STDC);
+}
+else if (leader_sequence_two_keys(KC_Q, KC_S)) {
+    SEND_STRING(CL_QS);
+}
+else if (leader_sequence_three_keys(KC_S, KC_T, KC_P)) {
+    SEND_STRING(CL_STP);
+}
+else if (leader_sequence_four_keys(KC_S, KC_T, KC_I, KC_S)) {
+    SEND_STRING(CL_STIS);
+}
+else if (leader_sequence_four_keys(KC_S, KC_T, KC_D, KC_S)) {
+    SEND_STRING(CL_STDS);
+}
+else if (leader_sequence_three_keys(KC_S, KC_P, KC_C)) {
+    SEND_STRING(CL_SPC);
+}
+else if (leader_sequence_three_keys(KC_S, KC_U, KC_D)) {
+    SEND_STRING(CL_SUD);
+}
+else if (leader_sequence_three_keys(KC_S, KC_W, KC_E)) {
+    SEND_STRING(CL_SWE);
+}
+else if (leader_sequence_three_keys(KC_S, KC_W, KC_O)) {
+    SEND_STRING(CL_SWO);
+}
+else if (leader_sequence_three_keys(KC_T, KC_A, KC_C)) {
+    SEND_STRING(CL_TAC);
+}
+else if (leader_sequence_three_keys(KC_T, KC_H, KC_A)) {
+    SEND_STRING(CL_THA);
+}
+else if (leader_sequence_two_keys(KC_T, KC_C)) {
+    SEND_STRING(CL_TC);
+}
+else if (leader_sequence_one_key(KC_T)) {
+    SEND_STRING(CL_T);
+}
+else if (leader_sequence_two_keys(KC_T, KC_I)) {
+    SEND_STRING(CL_TI);
+}
+else if (leader_sequence_two_keys(KC_T, KC_1)) {
+    SEND_STRING(CL_T1);
+}
+else if (leader_sequence_three_keys(KC_T, KC_1, KC_D)) {
+    SEND_STRING(CL_T1D);
+}
+else if (leader_sequence_four_keys(KC_T, KC_1, KC_D, KC_M)) {
+    SEND_STRING(CL_T1DM);
+}
+else if (leader_sequence_two_keys(KC_T, KC_2)) {
+    SEND_STRING(CL_T2);
+}
+else if (leader_sequence_three_keys(KC_T, KC_2, KC_D)) {
+    SEND_STRING(CL_T2D);
+}
+else if (leader_sequence_four_keys(KC_T, KC_2, KC_D, KC_M)) {
+    SEND_STRING(CL_T2DM);
+}
+else if (leader_sequence_two_keys(KC_U, KC_C)) {
+    SEND_STRING(CL_UC);
+}
+else if (leader_sequence_three_keys(KC_U, KC_A, KC_F)) {
+    SEND_STRING(CL_UAF);
+}
+else if (leader_sequence_two_keys(KC_U, KC_F)) {
+    SEND_STRING(CL_UF);
+}
+else if (leader_sequence_two_keys(KC_V, KC_D)) {
+    SEND_STRING(CL_VD);
+}
+else if (leader_sequence_three_keys(KC_V, KC_A, KC_G)) {
+    SEND_STRING(CL_VAG);
+}
+else if (leader_sequence_three_keys(KC_V, KC_O, KC_M)) {
+    SEND_STRING(CL_VOM);
+}
+else if (leader_sequence_one_key(KC_W)) {
+    SEND_STRING(CL_W);
+}
+else if (leader_sequence_one_key(KC_C)) {
+    SEND_STRING(CL_C);
+}
 
 
-  // if (leader_sequence_one_key(KC_)) {
+
+  // else if (leader_sequence_one_key(KC_)) {
   //   SEND_STRING(CL_);
   // }
 
-  // if (leader_sequence_two_keys(KC_, KC_)) {
+  // else if (leader_sequence_two_keys(KC_, KC_)) {
   //   SEND_STRING(CL_);
   // }
 
-  // if (leader_sequence_three_keys(KC_, KC_, KC_)) {
+  // else if (leader_sequence_three_keys(KC_, KC_, KC_)) {
   //   SEND_STRING(CL_);
   // }
 
