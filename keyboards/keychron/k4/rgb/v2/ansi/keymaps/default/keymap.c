@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
 #include <cli_abbv.c>
+#include <quantum_keycodes.h>
 
 enum my_keycodes {
   S_MU = SAFE_RANGE,  // Inline Medicare Unsigned 
@@ -56,22 +57,7 @@ enum my_keycodes {
   E_EOR,              // EOR/
   E_ML,               // EOR Make Medicare Signed
   E_M,                // EOR Make Medicare Unsigned
-  E_NH,               // No History
-
-  CL_AD,              // adenocarcinoma
-  CL_ANA,             // Anaemia
-  
-  CL_COV,             // Covid
-
-  CL_D,               // Diarrhoea
-  CL_DYS,             // Dysuria
-
-
-  CL_HOT,             // Hypothyroidism
-  CL_HYPT,            // Hyperthyroidism
-
-  CL_ST              // Sore Thorat
-
+  E_NH               // No History
 };
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
@@ -105,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = { {   KC_ESC,    KC_F1,     KC_F2,     KC_F3,   KC_F4,   KC_F5,   KC_F6,    KC_F7,   KC_F8,   KC_F9,     KC_F10,    KC_F11,    KC_F12,    KC_DEL,    KC_HOME,   KC_END,    KC_PGUP,   KC_PGDN,   RGB_MOD },
                 {   KC_GRV,    KC_1,      KC_2,      KC_3,    KC_4,    KC_5,    KC_6,     KC_7,    KC_8,    KC_9,      KC_0,      KC_MINS,   KC_EQL,    KC_BSPC,   KC_NO,     KC_NUM,   KC_PSLS,   KC_PAST,   KC_PMNS },
                 {   KC_TAB,    KC_Q,      KC_W,      KC_E,    KC_R,    KC_T,    KC_Y,     KC_U,    KC_I,    KC_O,      KC_P,      KC_LBRC,   KC_RBRC,   KC_BSLS,   KC_NO,     KC_P7,     KC_P8,     KC_P9,     KC_PPLS },
-                {   KC_CAPS,   KC_A,      KC_S,      KC_D,    KC_F,    KC_G,    KC_H,     KC_J,    KC_K,    KC_L,      KC_SCLN,   KC_QUOT,   KC_NO,     KC_ENT,    KC_NO,     KC_P4,     KC_P5,     KC_P6,     KC_NO   },
+                {   QK_LEAD,   KC_A,      KC_S,      KC_D,    KC_F,    KC_G,    KC_H,     KC_J,    KC_K,    KC_L,      KC_SCLN,   KC_QUOT,   KC_NO,     KC_ENT,    KC_NO,     KC_P4,     KC_P5,     KC_P6,     KC_NO   },
                 {   KC_LSFT,   KC_NO,     KC_Z,      KC_X,    KC_C,    KC_V,    KC_B,     KC_N,    KC_M,    KC_COMM,   KC_DOT,    KC_SLSH,   KC_NO,     KC_RSFT,   KC_UP,     KC_P1,     KC_P2,     KC_P3,     KC_PENT },
-                {   KC_LCTL,   KC_LGUI,   KC_LALT,   KC_NO,   KC_NO,   KC_NO,   LT(_FL, KC_SPC),   KC_NO,   KC_NO,   KC_NO,     KC_RALT,   MO(_CLI),   KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_P0,     KC_PDOT,   KC_NO   }
+                {   KC_LCTL,   KC_LGUI,   KC_LALT,   KC_NO,   KC_NO,   KC_NO,   KC_SPC,   KC_NO,   KC_NO,   KC_NO,     KC_RALT,   MO(_CLI),   KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_P0,     KC_PDOT,   KC_NO   }
               },
 
 /*				+--------------------------------------------------------------------------+-------------------+
@@ -135,9 +121,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_CLI] =   { {   S_NFL,  _______,  _______,   _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,   _______,   _______,   _______,  _______,  _______,  _______,  _______,  _______ },
                 {   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,   _______,   _______,  _______,    KC_NO,  _______,  _______,  _______,  _______ },
-                {   _______,  _______,  _______,  _______,  _______,  _______,  CL_HYPT,  _______,  _______,  _______,   S_PO,   _______,   _______,  _______,    KC_NO,  _______,  _______,  _______,  _______ },
-                {   _______,  CL_ANA,  CL_ST,  CL_D,  CL_DYS,  _______,  CL_HOT,  _______,  _______,  _______,   _______,   _______,     KC_NO,  _______,    KC_NO,  _______,  _______,  _______,    KC_NO },
-                {   _______,    KC_NO,  _______,  _______,  CL_COV,  _______,  _______,  S_NH,  _______,  _______,   _______,   S_PSOR,     KC_NO,  _______,  _______,  _______,  _______,  _______,  _______ },
+                {   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   S_PO,   _______,   _______,  _______,    KC_NO,  _______,  _______,  _______,  _______ },
+                {   KC_CAPS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,   _______,     KC_NO,  _______,    KC_NO,  _______,  _______,  _______,    KC_NO },
+                {   _______,    KC_NO,  _______,  _______,  _______,  _______,  _______,  S_NH,  _______,  _______,   _______,   S_PSOR,     KC_NO,  _______,  _______,  _______,  _______,  _______,  _______ },
                 {   _______,  KC_LALT,  KC_LGUI,    KC_NO,    KC_NO,    KC_NO,  _______,    KC_NO,    KC_NO,    KC_NO,   _______,   MO(_CLI),   _______,  _______,  _______,  _______,  _______,  _______,    KC_NO }
               }  
 
@@ -173,93 +159,93 @@ void keyboard_post_init_user(void) {
 
 
 void leader_end_user(void) {
-  if (leader_sequence_one_key(...)) {
-    ...
-  }
+  // if (leader_sequence_one_key(...)) {
+  //   ...
+  // }
 
   if (leader_sequence_two_keys(KC_A, KC_D)) {
     SEND_STRING(CL_AD);
   }
 
-  if (leader_sequence_two_keys(KC_A, KC_L)) {
+  else if (leader_sequence_two_keys(KC_A, KC_L)) {
     SEND_STRING(CL_AL);
   }
-  if (leader_sequence_two_keys(KC_A, KC_M)) {
+  else if (leader_sequence_two_keys(KC_A, KC_M)) {
     SEND_STRING(CL_AM);
   }
-  if (leader_sequence_two_keys(KC_A, KC_O)) {
+  else if (leader_sequence_two_keys(KC_A, KC_O)) {
     SEND_STRING(CL_AO);
   }
 
-  if (leader_sequence_two_keys(KC_A, KC_Q)) {
+  else if (leader_sequence_two_keys(KC_A, KC_Q)) {
     SEND_STRING(CL_AQ);
   }
 
-  if (leader_sequence_two_keys(KC_A, KC_R)) {
+  else if (leader_sequence_two_keys(KC_A, KC_R)) {
     SEND_STRING(CL_AR);
   }
 
-  if (leader_sequence_two_keys(KC_A, KC_N)) {
+  else if (leader_sequence_two_keys(KC_A, KC_N)) {
     SEND_STRING(CL_AN);
   }
 
-  if (leader_sequence_two_keys(KC_A, KC_F)) {
+  else if (leader_sequence_two_keys(KC_A, KC_F)) {
     SEND_STRING(CL_AF);
   }
 
-  if (leader_sequence_three_keys(KC_A, KC_N, KC_A)) {
+  else if (leader_sequence_three_keys(KC_A, KC_N, KC_A)) {
     SEND_STRING(CL_ANA);
   }
 
-  if (leader_sequence_three_keys(KC_A, KC_R, KC_R)) {
+  else if (leader_sequence_three_keys(KC_A, KC_R, KC_R)) {
     SEND_STRING(CL_ARR);
   }
 
-  if (leader_sequence_three_keys(KC_A, KC_S, KC_Y)) {
+  else if (leader_sequence_three_keys(KC_A, KC_S, KC_Y)) {
     SEND_STRING(CL_ASY);
   }
   
-  if (leader_sequence_three_keys(KC_A, KC_C, KC_P)) {
+  else if (leader_sequence_three_keys(KC_A, KC_C, KC_P)) {
     SEND_STRING(CL_ACP);
   }
 
 
-  if (leader_sequence_one_key(KC_B)) {
+  else if (leader_sequence_one_key(KC_B)) {
     SEND_STRING(CL_B);
   }
 
-  if (leader_sequence_two_keys(KC_B, KC_C)) {
+  else if (leader_sequence_two_keys(KC_B, KC_C)) {
     SEND_STRING(CL_BC);
   }
 
-  if (leader_sequence_two_keys(KC_B, KC_A)) {
+  else if (leader_sequence_two_keys(KC_B, KC_A)) {
     SEND_STRING(CL_BA);
   }
 
-  if (leader_sequence_two_keys(KC_B, KC_I)) {
+  else if (leader_sequence_two_keys(KC_B, KC_I)) {
     SEND_STRING(CL_BI);
   }
 
-  if (leader_sequence_two_keys(KC_B, KC_R)) {
+  else if (leader_sequence_two_keys(KC_B, KC_R)) {
     SEND_STRING(CL_BR);
   }
 
-  if (leader_sequence_three_keys(KC_B, KC_R, KC_A)) {
+  else if (leader_sequence_three_keys(KC_B, KC_R, KC_A)) {
     SEND_STRING(CL_BRA);
-  }
+  } 
 
 
-  if (leader_sequence_one_key(KC_)) {
-    SEND_STRING(CL_);
-  }
+  // if (leader_sequence_one_key(KC_)) {
+  //   SEND_STRING(CL_);
+  // }
 
-  if (leader_sequence_two_keys(KC_, KC_)) {
-    SEND_STRING(CL_);
-  }
+  // if (leader_sequence_two_keys(KC_, KC_)) {
+  //   SEND_STRING(CL_);
+  // }
 
-  if (leader_sequence_three_keys(KC_, KC_, KC_)) {
-    SEND_STRING(CL_);
-  }
+  // if (leader_sequence_three_keys(KC_, KC_, KC_)) {
+  //   SEND_STRING(CL_);
+  // }
 
 }
 
@@ -427,48 +413,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case E_NH:
       if (record->event.pressed) {
         SEND_STRING("10"SS_TAP(X_ENT)"nh"SS_TAP(X_ENT)SS_TAP(X_ENT));
-      }
-      return false;
-
-    case CL_ANA:
-      if (record->event.pressed) {
-        SEND_STRING("anaemia ");
-      }
-      return false;
-
-    case CL_COV:
-      if (record->event.pressed) {
-        SEND_STRING("covid ");
-      }
-      return false;
-
-    case CL_D:
-      if (record->event.pressed) {
-        SEND_STRING("diarrhoea ");
-      }
-      return false;
-
-    case CL_DYS:
-      if (record->event.pressed) {
-        SEND_STRING("dysuria ");
-      }
-      return false;
-    
-    case CL_HOT:
-      if (record->event.pressed) {
-        SEND_STRING("hypothyroidism ");
-      }
-      return false;
-
-    case CL_HYPT:
-      if (record->event.pressed) {
-        SEND_STRING("hyperthyroidism ");
-      }
-      return false;
-
-    case CL_ST:
-      if (record->event.pressed) {
-        SEND_STRING("sore throat ");
       }
       return false;
 
