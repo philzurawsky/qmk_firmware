@@ -1,0 +1,167 @@
+
+// a - adrq
+// ao - add on
+// ana - anaemia   
+// ar - allergic rhinitis
+// arr - arrhythmia
+// asy - asymptomatic
+// af - atrial fibrillation 
+
+
+# define CL_AD          "adenocarcinoma "
+# define CL_AL          "allergic "
+# define CL_AM          "amenorrhoea "
+# define CL_AO          "add on "
+# define CL_AQ          "adrq "
+# define CL_AR          "allergic rhinitis "
+# define CL_ANA         "anaemia "
+# define CL_AN          "antenatal "
+# define CL_ARR         "arrhythmia "
+# define CL_ASY         "asymptomatic "
+# define CL_AF          "atrial fibrillation "
+# define CL_ACP         "atypical chest pain "
+
+# define CL_BC          "bartholins cyst "
+# define CL_BA          "baseline "
+# define CL_B           "benign "
+# define CL_BI          "bilateral "
+# define CL_BRA         "bradycardia "
+# define CL_BR          "bronchiectasis "
+
+# define CL_CAP         "ca prostate "
+# define CL_CAR         "cardiomyopathy "
+# define CL_CE          "cervix "
+# define CL_CLB         "cervix looks benign "
+# define CL_CU          "check up "
+# define CL_CHT         "chemotherapy "
+# define CL_CHD         "chest discomfort "
+# define CL_CHP         "chest pain "
+# define CL_CHO         "cholecystectomy "
+# define CL_CC          "cholecystitis "
+# define CL_CHOL        "cholesterol "
+# define CL_CHR         "chronic "
+# define CL_CHRC        "chronic cough "
+# define CL_CHRD        "chronic diarrhoea "
+# define CL_CD          "crohns disease "
+# define CL_COD         "coeliac disease "
+# define CL_CF          "confusion "
+# define CL_CCF         "congestive cardiac failure "
+# define CL_CON         "conjunctivitis "
+# define CL_CONS        "constipation "
+
+
+# define CL_DEF         "deficiency "
+# define CL_DEM         "dementia "
+# define CL_DEMS        "dementia screen "
+# define CL_DEPN        "depression "
+# define CL_DB          "diabetes "
+# define CL_DBC         "diabetic "
+# define CL_DIAL        "dialysis "
+# define CL_D           "diarrhoea"
+# define CL_DV          "diarrhoea and vomiting "
+# define CL_DIS         "discharge "
+# define CL_DYL         "dyslipidaemia "
+# define CL_DYM         "dysmenorrhoea "
+# define CL_DYP         "dyspareunia "
+# define CL_DYS         "dysuria "
+# define CL_DF          "dysuria and frequency "         //Changed
+
+
+# define CL_EPREG       "early pregnancy "
+# define CL_E           "elevated "
+# define CL_EC          "endocervical "
+# define CL_ENL         "enlarged "
+# define CL_ELN         "enlarged lymph node "
+# define CL_ED          "epigastric discomfort " 
+# define CL_EP          "epigastric pain "
+# define CL_EPIL        "epilepsy "
+# define CL_EXC         "exclude "
+
+
+# define CL_FA          "faeces "
+# define CL_FTT         "failure to thrive "
+# define CL_FHD         "family history of diabetes "
+# define CL_FAT         "fatigue "
+# define CL_FD          "fe deficiency "
+# define CL_FEB         "febrile "
+# define CL_FERT        "fertility "
+# define CL_FU          "follow up " 
+# define CL_FI          "for investigation "
+# define CL_FR          "frequency "
+# define CL_FAU         "frequency and urgency "         //Changed
+
+
+# define CL_GS          "gallstones "
+# define CL_GA          "gastrectomy "
+# define CL_GB          "gastric biopsy "
+# define CL_GU          "gastric ulcer "
+# define CL_GE          "gastroenteritis "
+# define CL_GC          "general check "
+# define CL_GCU         "general check up "
+# define CL_GED         "gestational diabetes "
+# define CL_GF          "glandular fever "
+# define CL_GO          "gonorrhoea "
+# define CL_GD          "graves disease "
+
+
+# define CL_HAEM        "haematuria "
+# define CL_HAE         "haemochromatosis "
+# define CL_HAN         "haemolytic anaemia "
+# define CL_HA          "haemorrhage "
+# define CL_HAD         "hashimotos disease "
+# define CL_HAT         "hashimotos thyroiditis "
+# define CL_HE          "headache " 
+# define CL_HES         "headaches "
+# define CL_HECH        "health check "
+# define CL_HPY         "helicobacter pylori "
+# define CL_H           "hepatitis "
+# define CL_HC          "high cholesterol "
+# define CL_HI          "history "
+# define CL_HYPC        "hypercholesterolaemia "
+# define CL_HYG         "hyperglycaemia "
+# define CL_HYK         "hyperkalaemia "
+# define CL_HYPL        "hyperlipidaemia "
+# define CL_HYN         "hypernatraemia "
+# define CL_HYP         "hyperparathyroidism "
+# define CL_HT          "hypertension "
+# define CL_HTH         "hyperthyroid "
+# define CL_HYT         "hyperthyroidism "
+# define CL_HOK         "hypokalaemia "
+# define CL_HOL         "hypolipaemia "
+# define CL_HON         "hyponatraemia "
+# define CL_HOP         "hypoparathyroidism "
+# define CL_HOT         "hypothyroidism "
+# define CL_Hy          "hysterectomy "
+
+
+# define CL_IMM         "immunisation "
+# define CL_IMC         "incomplete miscarriage "
+# define CL_I           "incontinence "
+# define CL_ICF         "increased confusion "
+# define CL_INC         "indwelling catheter "
+# define CL_INFE        "infected "
+# define CL_INFW        "infected wound "
+# define CL_INF         "infection "
+# define CL_INFER       "infertility "
+# define CL_INFL        "inflammatory "
+# define CL_IBD         "inflammatory bowel disease "
+# define CL_IDA         "iron deficiency anaemia "
+# define CL_IRP         "irregular periods "
+# define CL_IRPB        "irregular pv bleeding "
+# define CL_IHD         "ischaemic heart disease "
+
+
+# define CL_J           "jaundice "
+# define CL_JP          "joint pain "
+
+
+# define CL_LE          "lesion "
+# define CL_L           "lethargy "
+# define CL_LAP         "lower abdo pain "
+
+
+# define CL_MC          "macrocytic "
+# define CL_MCA         "macrocytic anaemia "
+# define CL_M           "malaise "
+# define CL_MA          "malignant "
+# define CL_ME          "melanoma "
